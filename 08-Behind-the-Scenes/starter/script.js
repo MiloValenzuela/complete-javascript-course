@@ -45,7 +45,7 @@ console.log('Original:',jessica);
 console.log('Clone:', jessicaClone);
 
 */
-
+/*
 function calcAge(birthYear) {
     const age = 2037 - birthYear;
     
@@ -77,3 +77,32 @@ function calcAge(birthYear) {
 const firstName = 'Jonas';
 calcAge(1987);
 // console.log(age);
+*/
+
+
+// Functions
+console.log(addDecl(2 + 3));
+
+function addDecl(a,b) {
+    return a + b;
+}
+
+const addExpr = function(a,b) {
+    return a + b;
+}
+
+const addArrow = (a,b) => a + b;
+
+// Example
+if(!numProducts) deleteShoppingCart
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+    console.log('All products deleted!');
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+
