@@ -77,7 +77,7 @@ function calcAge(birthYear) {
 const firstName = 'Jonas';
 calcAge(1987);
 // console.log(age);
-*/
+
 
 
 // Functions
@@ -106,3 +106,38 @@ var x = 1;
 let y = 2;
 const z = 3;
 
+
+*/
+
+
+
+const calcAge = function(birthYear) {
+    console.log(2037 - birthYear);
+    // console.log(this);
+};
+calcAge(1987);
+
+const calcAgeArrow = birthYear => {
+    console.log(2037- birthYear);
+    // console.log(this);
+};
+calcAgeArrow(1980);
+
+const jonas ={
+    year: 1991,
+    calcAge: function () {
+        console.log(this);
+        console.log(2037 - this.year);
+    }
+}
+jonas.calcAge();
+
+const matilda = {
+    year: 2017,
+};
+
+matilda.calcAge = jonas.calcAge;
+matilda.calcAge();
+
+const f = jonas.calcAge;
+f(1987);
