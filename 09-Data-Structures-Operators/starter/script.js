@@ -46,19 +46,24 @@ restaurant.orderDelivery({
   starterIndex: 2,
 });
 
+restaurant.orderDelivery({
+  address: 'Via del Sole, 21',
+  starterIndex: 1,
+})
+
 const { name, openingHours, categories} = restaurant;
-console.log(name, openingHours, categories);
+// console.log(name, openingHours, categories);
 
 const {
   name: restaurantName, 
   openingHours: hours, 
   categories: tags,
 } = restaurant;
-console.log(restaurantName, hours, tags);
+// console.log(restaurantName, hours, tags);
 
 // Default values
-const { menu = [], starterMenu: starter = []} = restaurant;
-console.log(menu, starter);
+// const { menu = [], starterMenu: starter = []} = restaurant;
+// console.log(menu, starter);
 
 // Mutating variables
 let a = 111;
@@ -70,3 +75,18 @@ console.log(a, b);
 // Nested objects
 const { fri: {open: o, close: c}, } = openingHours;
 console.log(o, c);
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+
+// Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
