@@ -43,6 +43,11 @@ const restaurant = {
   }
 };
 
+orderPizza: function(mainIngiedient, ...otherIngridients) {
+  console.log(mainIngiedient);
+  console.log(otherIngridients);
+}
+
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -115,6 +120,7 @@ console.log(ingredients);
 restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
 restaurant.orderPasta(...ingredients);
 
+
 // Objects
 const newRestaurant = {foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
 console.log(newRestaurant);
@@ -123,3 +129,19 @@ const restaurantCopy = {...restaurant};
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+
+// 2) functions
+const add = function(...numbers) {
+  let sum = 0;
+  for (let i =0; i < numbers.length; i++) sum +=numbers[i];
+  console.log(sum);
+};
+
+add(2,3)
+add(5,3,7,2)
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
