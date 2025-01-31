@@ -40,13 +40,14 @@ const restaurant = {
 
   orderPasta: function(ing1, ing2, ing3) {
     console.log(`Here is your declicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+
+  orderPizza: function (mainIngiedient, ...otherIngridients) {
+    console.log(mainIngiedient);
+    console.log(otherIngridients);
   }
 };
 
-orderPizza: function(mainIngiedient, ...otherIngridients) {
-  console.log(mainIngiedient);
-  console.log(otherIngridients);
-}
 
 restaurant.orderDelivery({
   time: '22:30',
@@ -74,25 +75,25 @@ const {
 // const { menu = [], starterMenu: starter = []} = restaurant;
 // console.log(menu, starter);
 
-// Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-({ a, b } = obj);
-console.log(a, b);
+// // Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// ({ a, b } = obj);
+// console.log(a, b);
 
-// Nested objects
-const { fri: {open: o, close: c}, } = openingHours;
-console.log(o, c);
+// // Nested objects
+// const { fri: {open: o, close: c}, } = openingHours;
+// console.log(o, c);
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-const newArr = [1, 2, ...arr];
-console.log(newArr);
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
 
-console.log(...newArr);
+// console.log(...newArr);
 
 const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 
@@ -145,3 +146,21 @@ const x = [23, 5, 7];
 add(...x);
 
 restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
+
+// Use any data type, return ANY data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'hello' || 23 || null);
+
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10
+console.log(guests2);
+
+console.log('---- AND ----');
