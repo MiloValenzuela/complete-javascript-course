@@ -66,9 +66,22 @@ const [gk, fieldPlayers] = players1;
 // 3.
 const allPlayers = [...players1, ...players2];
 console.log(allPlayers);
-
+// 4.
 const players1Final = [...players1, 'Thiago', 'Coutinho', 'Periscic'];
 
 // 5.
 const {odds: {team1, x: draw, team2}} = game;
 console.log(team1, draw, team2);
+
+// 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
+
+const printGoals = function(...players) {
+  console.log(`${players.length} goals were scored`);
+};
+
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// printGoals('Davies', 'Muller');
+printGoals(...game.scored);
+
+// 7.
+team1 < team2 && console.log("Team 1 is more likely to win");
