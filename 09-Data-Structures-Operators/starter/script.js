@@ -1,5 +1,14 @@
 'use strict';
 
+
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+}
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -85,3 +94,11 @@ printGoals(...game.scored);
 
 // 7.
 team1 < team2 && console.log("Team 1 is more likely to win");
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
