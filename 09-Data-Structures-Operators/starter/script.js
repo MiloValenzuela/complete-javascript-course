@@ -1,53 +1,53 @@
 'use strict';
 
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const openingHours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [weekdays[5]]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// const openingHours = {
+//   [weekdays[3]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   [weekdays[4]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [weekdays[5]]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
   
-  // ES6 enhanced object literals
-  openingHours,
+//   // ES6 enhanced object literals
+//   openingHours,
 
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
 
-  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
+//   orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+//     console.log(
+//       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+//     );
+//   },
 
-  orderPasta(ing1, ing2, ing3) {
-    console.log(
-      `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
-    );
-  },
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(
+//       `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+//     );
+//   },
 
-  orderPizza(mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-}
+//   orderPizza(mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     console.log(otherIngredients);
+//   },
+// }
 ///////////////////////////////////////
 // Coding Challenge #1
 
@@ -65,71 +65,71 @@ const restaurant = {
 
 // TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-const [players1, players2] =  game.players;
+// const [players1, players2] =  game.players;
 
-// 2.
-const [gk, fieldPlayers] = players1;
+// // 2.
+// const [gk, fieldPlayers] = players1;
 
-// 3.
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-// 4.
-const players1Final = [...players1, 'Thiago', 'Coutinho', 'Periscic'];
+// // 3.
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+// // 4.
+// const players1Final = [...players1, 'Thiago', 'Coutinho', 'Periscic'];
 
-// 5.
-const {odds: {team1, x: draw, team2}} = game;
-console.log(team1, draw, team2);
+// // 5.
+// const {odds: {team1, x: draw, team2}} = game;
+// console.log(team1, draw, team2);
 
 // 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
 
-const printGoals = function(...players) {
-  console.log(`${players.length} goals were scored`);
-};
+// const printGoals = function(...players) {
+//   console.log(`${players.length} goals were scored`);
+// };
 
-// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-// printGoals('Davies', 'Muller');
-printGoals(...game.scored);
+// // printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// // printGoals('Davies', 'Muller');
+// printGoals(...game.scored);
 
 // // 7.
 // team1 < team2 && console.log("Team 1 is more likely to win");
@@ -186,32 +186,62 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Th
 GOOD LUCK 😀
 */
 
-const orderSet = new Set([
-  'Pasta', 
-  'Pizza', 
-  'Pizza', 
-  "Risotto", 
-  'Pasta',
+// const orderSet = new Set([
+//   'Pasta', 
+//   'Pizza', 
+//   'Pizza', 
+//   "Risotto", 
+//   'Pasta',
+// ]);
+
+// console.log(orderSet);
+
+// console.log(new Set('Jonas'));
+
+// console.log(orderSet.size);
+// console.log(orderSet.has('Pizza'));
+// console.log(orderSet.has('Bread'));
+// orderSet.add('Garlic Bread');
+// orderSet.add('Garlic Bread');
+// orderSet.delete('Risotto');
+// // orderSet.clear();
+// console.log(orderSet);
+
+// for(const order of orderSet) console.log(order);
+
+// // Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', "Chef", 'Waiter' ];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+// console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+// );
+
+const italianFoods = new Set(['pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil'
 ]);
 
-console.log(orderSet);
+const mexicanFoods = new Set(['tortillas','beans','rice','tomatoes','avocado','garlic']);
 
-console.log(new Set('Jonas'));
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log('Intersection', commonFoods);
+console.log([...commonFoods]);
 
-console.log(orderSet.size);
-console.log(orderSet.has('Pizza'));
-console.log(orderSet.has('Bread'));
-orderSet.add('Garlic Bread');
-orderSet.add('Garlic Bread');
-orderSet.delete('Risotto');
-// orderSet.clear();
-console.log(orderSet);
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log('Union:', italianMexicanFusion);
 
-for(const order of orderSet) console.log(order);
+console.log(new Set([...italianFoods, ...mexicanFoods]));
 
-// Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', "Chef", 'Waiter' ];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
-console.log(new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-);
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods)
+console.log('Difference italian',uniqueItalianFoods);
+
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods)
+console.log('Difference mexican',uniqueMexicanFoods);
+
+const uniqueItalianAndMexicanFoods = italianFoods.symmetricDifference(mexicanFoods)
+console.log(uniqueItalianAndMexicanFoods);
+
+console.log(italianFoods.isDisjointForm(mexicanFoods));
