@@ -225,7 +225,7 @@ BONUS: Use the 'displayResults' method to display the 2 arrays in the test data.
 
 BONUS TEST DATA 1: [5, 2, 3]
 BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
-*/
+
 
 const poll = {
     question: 'What is your favorite programing language',
@@ -262,3 +262,23 @@ poll.displayResult.call({ answers: [5,2,3]}, 'string')
 
 // [5, 2, 3]
 // BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
+*/
+
+const runOnce = function() {
+    console.log('This will never run again');
+
+};
+runOnce();
+
+// IIFE
+// (fucntion () {
+//     console.log('This will never run again');
+//     const isPrivate = 23;
+// })();
+
+( () => console.log('This will Also never run again'))();
+
+{
+    const isPrivate = 23;
+    var notPrivate = 46;
+}
