@@ -115,7 +115,7 @@ console.log(arr[arr.length -1]);
 console.log(arr.slice(-1)[0]);
 console.log(arr.at(-1));
 
-// */
+// 
 
 // for (const movement of movements) {
 for (const [i, movement] of movements.entries()) {
@@ -135,7 +135,20 @@ movements.forEach(function (mov, i, arr) {
   }
 });
 
+*/
+
 // 0: function(200)
 // 0: function(450)
 // 0: function(400)
 // ...
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+// Set
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
