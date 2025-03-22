@@ -115,21 +115,27 @@ console.log(arr[arr.length -1]);
 console.log(arr.slice(-1)[0]);
 console.log(arr.at(-1));
 
-*/
+// */
 
-for (const movement of movements) {
+// for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
   if (movement > 0) {
-    console.log(`You deposited ${movement}`);
+    console.log(`Movement ${i + 1}: your deposited`);
   } else {
-    console.log(`You withdrew ${Math.abs(movement)}`);
+    console.log(`Movement ${i + 1}: You withdrew`);
   }
 }
 
 console.log('---- FOREACH -----');
-movements.forEach(function (movement) {
-  if (movement > 0) {
-    console.log(`You deposited ${movement}`);
+movements.forEach(function (mov, i, arr) {
+  if (mov > 0) {
+    console.log(`Movement ${i + 1}: your deposited ${mov}`);
   } else {
-    console.log(`You withdrew ${Math.abs(movement)}`);
+    console.log(`Movement ${i + 1}: You withdrew ${mov}`);
   }
-})
+});
+
+// 0: function(200)
+// 0: function(450)
+// 0: function(400)
+// ...
