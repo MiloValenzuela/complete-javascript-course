@@ -83,8 +83,13 @@ const displayMovements = function(movements) {
 }
 displayMovements(account1.movements);
 
-console.log(account1.innerHTML);
+const user = 'Steven Thomas Williams';
+const username = user[0].toLowerCase().split(' ')
+.map(function(name) {
+  return name[0];
+})
 
+console.log(username);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -232,3 +237,4 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
 });
 
 console.log(movementsDescriptions);
+
