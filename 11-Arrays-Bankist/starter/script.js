@@ -81,23 +81,23 @@ const displayMovements = function(movements) {
 
   })
 }
-displayMovements(account1.movements);
+// displayMovements(account1.movements);
 
-const createUsernames = function (user) {
-  const username = user
-.toLowerCase()
-.split(' ')
-.map(name => name[0]);
-.join('');
-return username
+// const createUsernames = function (user) {
+//   const username = user
+// .toLowerCase()
+// .split(' ')
+// .map(name => name[0]);
+// .join('');
+// return username
 
-}
+// }
 
-const user = 'Steven Thomas Williams';
+// const user = 'Steven Thomas Williams';
 
 
 
-console.log(username);
+// console.log(username);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -226,12 +226,12 @@ const eurToUsd = 1.1;
 const movementsUSD = movements.map(mov => mov * eurToUsd);
 
 
-console.log(movements);
-console.log(movementsUSD);
+// console.log(movements);
+// console.log(movementsUSD);
 
 const movementsUSDfor = [];
 for(const mov of movements) movementsUSD.push(mov * eurToUsd);
-console.log(movementsUSDfor);
+// console.log(movementsUSDfor);
 
 const movementsDescriptions = movements.map((mov, i, arr) => {
 
@@ -244,5 +244,17 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
   // }
 });
 
-console.log(movementsDescriptions);
+// console.log(movementsDescriptions);
 
+const deposits = movements.filter(function(mov) {
+  return mov > 0;
+})
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = []
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
