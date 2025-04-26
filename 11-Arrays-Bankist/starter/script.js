@@ -99,6 +99,10 @@ const displayMovements = function(movements) {
 
 // console.log(username);
 
+const calcPrintBalance = function(movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0)
+}
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -245,7 +249,7 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
 });
 
 // console.log(movementsDescriptions);
-
+/*
 const deposits = movements.filter(function(mov) {
   return mov > 0;
 })
@@ -258,3 +262,14 @@ console.log(depositsFor);
 
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
+*/
+console.log(movements);
+
+// accumulator -> snowball
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
